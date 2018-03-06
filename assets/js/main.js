@@ -15,7 +15,8 @@ const wordArray = [
     "bishop",
     "narcissus",
     "chestburster",
-    "scott"
+    "scott",
+    "alien"
 ];
 
 let wins = 0;
@@ -35,15 +36,16 @@ document.onkeypress = function(kp) {
     console.log(`the user has pressed the ${userGuess} key`);
     console.log(`the computer's choice, split into an array, is ${answerArray}`);
 
+    // This checks two conditions:
+    // 1. is the key pressed a letter of the alphabet
+    // 2. has this letter of the alphabet already been pressed this round
     if (soFar.indexOf(userGuess) < 0 && alphabet.indexOf(userGuess) >= 0) {
-        // if the character pressed passes the above test, add it to the end of the soFar array
         soFar[soFar.length]=userGuess;
-        // remove one remaining guess
         remainingGuesses--
     }
-    // this will handle invalid key presses and alert the user
+    // this will handle invalid key presses/alert the user
     else{
-        alert("Invalid guess: please choose a letter of the alphabet that you haven't already guessed this round");
+        alert("Please choose a letter of the alphabet that you haven't already guessed this round");
     }
 
 
